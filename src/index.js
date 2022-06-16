@@ -8,13 +8,18 @@
 import React from 'react';
 //ReactDOM 可以帮我们把 React组件渲染到页面上去，没有其他作用了。他是从react-dom中引入的，而不是react 引入。
 import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 //
 import App from './01-base/10-todolist';
 
+
+const container = document.getElementById('root');
+const root = createRoot(container);
 //react DOM里面有一个reader方法，功能就是把组件渲染并构造DOM树，然后插入到页面上某个特定元素上
-ReactDOM.render(
+root.render(
     //纯HTML代码写在js里，叫 JSX - JavaScript XML
     <App/>
-,
+//,
 //渲染到哪里
-document.getElementById("root"))
+//document.getElementById("root")
+)

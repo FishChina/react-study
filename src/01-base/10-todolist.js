@@ -12,18 +12,7 @@ export default class App extends Component {
   state = {
     list:[
 
-        {
-            id:1,
-            text:'a'
-        },
-        {
-            id:2,
-            text:'b'
-        },
-        {
-            id:3,
-            text:'c'
-        }
+      'a','b','c'
     ]
   }
 
@@ -32,12 +21,12 @@ export default class App extends Component {
 
   handleClick = () =>{
 
-    console.log("click",this.myref.current.value),
-    //this.state.list.push(this.myref.current.value),
+    console.log("click",this.myref.current.value);
+    this.state.list.push(this.myref.current.value);
 
     this.setState({
 
-        list:this.state.list
+      list:this.state.list
     })
   }
 
@@ -46,7 +35,7 @@ export default class App extends Component {
   render() {
 
 
-    var newList = this.state.list.map(item=><li key={item.id} >{item.text}</li>)
+    //var newList = 
 
 
 
@@ -55,13 +44,13 @@ export default class App extends Component {
       <div>
           {/* <input ref="mytest"/> */}
           <input ref={this.myref}/>
-          <button  onClick={ 
+          <button key = 'item' onClick={ 
              this.handleClick
           }>add</button>
 
           <ul>
               {
-                newList
+                this.state.list.map(item=><li key='item' >{item}</li>)
               }
           </ul>
 
