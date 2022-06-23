@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 //
-import App from './01-base/12-卖座选项卡';
+import App from './01-base/16-props';
 
 
 const container = document.getElementById('root');

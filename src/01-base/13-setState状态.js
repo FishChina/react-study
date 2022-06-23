@@ -2,10 +2,67 @@
 
 import React, { Component } from 'react'
 
-export default class 13-setState状态 extends Component {
+export default class App extends Component {
+
+
+  state = {
+    count : 1
+  }
+
   render() {
     return (
-      <div>13-setState状态</div>
+      <div>
+        {this.state.count}
+        {/* <button onClick={this.handleAdd1}>add1</button> */}
+        <button onClick={this.handleAdd2}>add2</button>
+      </div>
     )
   }
+
+  // handleAdd1 = () => {
+  //   this.setState({
+  //     count:this.state.count + 1
+  //   })
+
+  //   this.setState({
+  //     count:this.state.count + 1
+  //   })
+
+  //   this.setState({
+  //     count:this.state.count + 1
+  //   })
+  // }
+
+  handleAdd2 = () => {
+    setTimeout(()=>{
+
+      this.setState({
+        count:this.state.count + 1
+      },()=>{
+        console.log(this.state.count)
+      })
+
+      
+  
+      this.setState({
+        count:this.state.count + 1
+      },()=>{
+        console.log(this.state.count)
+      })
+
+      // console.log(this.state.count)
+  
+      this.setState({
+        count:this.state.count + 1
+      },()=>{
+        console.log(this.state.count)
+      })
+
+      // console.log(this.state.count)
+
+    },0)
+
+  }
+
+
 }
