@@ -18,8 +18,10 @@ export default class App extends Component {
           }>add</button>
 
 
+          {/* bind 更改this指向 */}
           <button onClick={ this.handleClick.bind(this) }>add2</button>
 
+          
           <button onClick={ this.handleClick3 }>add3</button>
 
 

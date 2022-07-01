@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 //
-import App from './01-base/16-props';
+import App from './01-base/22-受控todoList';
 
 
 const container = document.getElementById('root');
