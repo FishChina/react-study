@@ -17,15 +17,18 @@ export default class App extends Component {
     list:[
     {
     id:'1',
-    mytext:'a'
+    mytext:'a',
+    isChecked:false
     },
     {
     id:'2',
-    mytext:'b'
+    mytext:'b',
+    isChecked:false
     },
     {
     id:'3',
-    mytext:'c'
+    mytext:'c',
+    isChecked:false
     }
     ]
   }
@@ -42,12 +45,12 @@ export default class App extends Component {
     let newList = [...this.state.list]
     newList.push({
       id:Math.random()*100000000,
-      //mytext:this.myref.current.value
+      mytext:this.state.mytext
     });
 
     this.setState({
-
-      list:newList
+      list:newList,
+      mytext:''
     })
 
     //清空输入框
@@ -69,6 +72,17 @@ export default class App extends Component {
     )
   }
 
+  handleChecked = (index) => {
+    console.log(index)
+
+    let newList = [...this.state.list]
+    newList[index].isChecked = !newList[index].isChecked
+
+    this.setState({
+      list:newList
+    })
+  }
+
 
 
   render() {
@@ -82,9 +96,7 @@ export default class App extends Component {
             this.setState({
                 mytext:evt.target.value
             })
-          }
-          }
-          
+          }}
           />
           <button  onClick={ 
              this.handleClick
@@ -92,14 +104,21 @@ export default class App extends Component {
 
           <ul>
               {
-                this.state.list.map((item,index)=><li key={item.id} >
+                this.state.list.map((item,index)=>
+                <li key={item.id} >
+                  <input type = 'checkbox' 
+                  checked = {item.isChecked}
+                  onChange = {()=>this.handleChecked(index)}
+                  ></input>
+                  {/* {item.isChecked?'删除':'不删除'} */}
                   {/* {item.mytext}  */}
                   {/* 富文本展示 */}
                   <span dangerouslySetInnerHTML={
                     {
                       __html:item.mytext
                     }
-                  }></span>
+                  } style = {{textDecoration: item.isChecked ? 'line-through': ''}}></span>
+                  <button >完成</button>
                   <button onClick= {()=>
                     this.handleDelClick(index)
                   }>del</button>
