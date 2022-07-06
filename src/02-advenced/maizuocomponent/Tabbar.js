@@ -28,32 +28,23 @@ export default class Tabbar extends Component {
             }
         )
 
-        this.props.myevent(index)
         //通知父组件该修改父组件的状态了
-      }
+        this.props.myevent(index)
 
-    //   which(){
-    //     switch (this.state.current){
-    //         case 0 : 
-    //             return <Film></Film>
-    //         case 1 :
-    //             return <Cinema></Cinema> 
-    //         case 2 :
-    //             return <Center></Center>
-    
-    //         default :
-    //             return null
-    //     }
-    //   }  
+      }
+ 
     
       render() {
+
         return (
           <div>
             
             <ul>
                 {
                     this.state.list.map((item,index) =>
-                        <li key={item.id} className={this.state.current === index ? 'active':''} onClick={()=>this.handleClick(index)}>
+                        <li key={item.id} 
+                        className={this.state.current === index ? 'active':''} 
+                        onClick={()=>this.handleClick(index)}>
                             {item.text}
                         </li>
                     )

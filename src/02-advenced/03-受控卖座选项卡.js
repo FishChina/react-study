@@ -1,12 +1,12 @@
 
-//fish 220701
+//fish 220706
 import React, { Component } from 'react'
 import './css/02-maizuo.css'
-import Film from './maizuocomponent/Film'
-import Cinema from './maizuocomponent/Cinema'
-import Center from './maizuocomponent/Center'
-import Tabbar from './maizuocomponent/Tabbar'
-import Navbar from './maizuocomponent/Navbar'
+import Film from './maizuocomponent2/Film'
+import Cinema from './maizuocomponent2/Cinema'
+import Center from './maizuocomponent2/Center'
+import Tabbar from './maizuocomponent2/Tabbar'
+import Navbar from './maizuocomponent2/Navbar'
 
 export default class App extends Component {
 
@@ -47,6 +47,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        {this.state.current}
         {/* { this.state.current === 0 && <Film></Film> }
         { this.state.current === 1 && <Cinema></Cinema> }
         { this.state.current === 2 && <Center></Center> } */}
@@ -75,7 +76,11 @@ export default class App extends Component {
                     
                 )
             }
-        }  ></Tabbar>
+        }  
+        // 将父亲组件的状态通过props传给孩子
+        current = {this.state.current}
+        list = {this.state.list}
+        ></Tabbar>
       </div>
     )
   }

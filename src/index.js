@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 //
-import App from './02-advenced/02-非受控卖座选项卡功能';
+import App from './02-advenced/03-受控卖座选项卡';
 
 
 const container = document.getElementById('root');

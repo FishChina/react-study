@@ -8,6 +8,8 @@ export default class App extends Component {
     return (
       <div>
         <h1>登录页</h1>
+        {/* 非受控组件 */}
+        
         <input type= 'text' ref = {this.myusername} defaultValue = 'fish'></input>
         <button onClick={()=>{
             console.log(this.myusername.current.value)
