@@ -9,6 +9,8 @@ export default class App extends Component {
   }
 }
 
+//以后的redux基于订阅发布模式
+
 //纯js
 //调度中心  bus对象
 var bus = {

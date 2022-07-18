@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 //
-import App from './02-advenced/07-发布订阅';
+import App from './02-advenced/08-订阅发布模式';
 
 
 const container = document.getElementById('root');

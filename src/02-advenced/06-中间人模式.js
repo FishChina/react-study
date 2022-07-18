@@ -11,6 +11,7 @@ export default class App extends Component {
           filmList:[],
           info: ""
         }
+        //axios获取数据
         axios.get('/test.json').then(res=>{
             console.log(res.data.data.films)
             this.setState({
@@ -20,9 +21,10 @@ export default class App extends Component {
     }
 
   render() {
+    //这里相当于父组件
     return (
       <div>
-        {this.state.info}
+        {/* {this.state.info} */}
         {
           this.state.filmList.map(
             item=>
@@ -46,6 +48,7 @@ export default class App extends Component {
   }
 }
 
+//电影列表页面
 /*受控组件*/
 class FileList extends Component{
   render(){
@@ -61,10 +64,12 @@ class FileList extends Component{
   }
 }
 
+//电影详情页面
 class FilmDetail extends Component{
   render(){
-    return <div className='filmdetail'>
+    // 通过props拿到父页面传来的info
+    return (<div className='filmdetail'>
       {this.props.info}
-    </div>
+    </div>)
   }
 }
