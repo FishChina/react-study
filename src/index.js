@@ -9,8 +9,8 @@ import React from 'react';
 //ReactDOM 可以帮我们把 React组件渲染到页面上去，没有其他作用了。他是从react-dom中引入的，而不是react 引入。
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
-//
-import App from './02-advenced/08-订阅发布模式';
+
+import App from './02-advenced/09-context模式';
 
 
 const container = document.getElementById('root');
