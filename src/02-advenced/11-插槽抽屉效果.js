@@ -1,16 +1,10 @@
-//fish 220701
+//fish 220719
 import React, { Component } from 'react'
 
 class Navbar extends Component{
     render(){
         return <div style={{background:"red"}}>
-            <button onClick={()=> {
-              // this.setState({
-              //   isShow:!this.state.isShow
-              // })
-              //console.log("子传父",this.props.event)
-              this.props.event()
-            }}>click</button>
+            {this.props.children}
             <span>navbar</span>
 
         </div>
@@ -37,41 +31,26 @@ class Sidebar extends Component{
     }
 }
 
-class Swiper extends Component{
-  render(){
-    return <div>
-        {this.props.children}
-    </div>
-  }
-}
-
 export default class App extends Component {
   state = {
     isShow : false
   }
 
-  handleEvent = () =>{
-    this.setState({
-      isShow: !this.state.isShow
-    })
-  }
+  //插槽模式
+
   render() {
     return (
       <div>
 
-        <Swiper>
-          <div>1111111</div>
-          <div>2222222</div>
-          <div>3333333</div>
-        </Swiper>
-        <Swiper></Swiper>
-        <Swiper></Swiper>
-        <Swiper></Swiper>
-        <Swiper></Swiper>
-        <Swiper></Swiper>
-        <Swiper></Swiper>
-
-        <Navbar event = {this.handleEvent} />
+        <Navbar>
+            <button onClick={()=>{
+                this.setState({
+                    isShow:!this.state.isShow
+                })
+            }}>
+                click
+            </button>
+        </Navbar>
         {this.state.isShow && <Sidebar/>}
         
       </div>

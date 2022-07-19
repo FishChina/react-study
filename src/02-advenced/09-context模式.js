@@ -27,12 +27,9 @@ export default class App extends Component {
   render() {
     //这里相当于父组件
 
-
     //父组件就是供应商provide
     return (
       <GlobalContext.Provider value={{
-        call:'打电话',
-        sms:'短信',
         info: this.state.info,
         changeInfo:(value)=>{
             this.setState({
@@ -102,7 +99,7 @@ class FilmDetail extends Component{
                 (value)=><div className='filmdetail'>
                             filmdetail - {value.info}
                         </div>
-                }
+            }
             
         </GlobalContext.Consumer>
     )

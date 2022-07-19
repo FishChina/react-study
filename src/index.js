@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 
-import App from './02-advenced/09-context模式';
+import App from './02-advenced/25-swiper同步';
 
 
 const container = document.getElementById('root');
