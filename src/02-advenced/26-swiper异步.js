@@ -1,4 +1,4 @@
-//fish 220719
+//fish 220722
 import React, { Component } from 'react'
 import Swiper,{Navigation, Pagination} from 'swiper'
 import  "swiper/css/bundle"
@@ -7,15 +7,29 @@ Swiper.use([Navigation,Pagination])
 export default class App extends Component {
 
     state = {
-        list:["111","222","333"]
+        list:[]
     }
 
     componentDidMount() {
+
+        setTimeout(()=>{
+            this.setState({
+                list:['aaa','bbb','ccc']
+            })
+
+        },1000)
+
+
+    }
+//DOM 更新完毕
+    componentDidUpdate() {
+
+
         new Swiper(".swiper",{
-          pagination: {
-            el: '.swiper-pagination',
-          }
-        })
+            pagination: {
+              el: '.swiper-pagination',
+            }
+          })
     }
 
   render() {

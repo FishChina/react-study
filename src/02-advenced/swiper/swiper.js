@@ -4,12 +4,7 @@ import Swiper,{Navigation, Pagination} from 'swiper'
 import  "swiper/css/bundle"
 Swiper.use([Navigation,Pagination])
 
-export default class App extends Component {
-
-    state = {
-        list:["111","222","333"]
-    }
-
+export default class Kswiper extends Component {
     componentDidMount() {
         new Swiper(".swiper",{
           pagination: {
@@ -25,13 +20,10 @@ export default class App extends Component {
         <div className="swiper" style={{height:"200px", background:"grey"}}>
             <div className="swiper-wrapper">
 
-                {
-                    this.state.list.map(item=>
-                    <div className="swiper-slide" key={item}>
-                        {item}
-                    </div>
-                    )
-                }
+                    <div className="swiper-slide" >1111</div>
+                    <div className="swiper-slide" >2222</div>
+                    <div className="swiper-slide" >3333</div>
+                  
             </div>
 
             <div className="swiper-pagination"></div>
