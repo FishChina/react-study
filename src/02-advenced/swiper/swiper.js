@@ -1,7 +1,7 @@
 //fish 220719
 import React, { Component } from 'react'
 import Swiper,{Navigation, Pagination} from 'swiper'
-import  "swiper/css/bundle"
+import  "swiper/swiper-bundle.min.css"
 Swiper.use([Navigation,Pagination])
 
 export default class Kswiper extends Component {
@@ -20,9 +20,7 @@ export default class Kswiper extends Component {
         <div className="swiper" style={{height:"200px", background:"grey"}}>
             <div className="swiper-wrapper">
 
-                    <div className="swiper-slide" >1111</div>
-                    <div className="swiper-slide" >2222</div>
-                    <div className="swiper-slide" >3333</div>
+              {this.props.children}
                   
             </div>
 

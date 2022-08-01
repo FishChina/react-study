@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 
-import App from './02-advenced/27-swiper组件';
+import App from './03-hooks/03-useEffect';
 
 
 const container = document.getElementById('root');

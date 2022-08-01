@@ -5,7 +5,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Kswiper></Kswiper>
+        <Kswiper>
+                    <div className="swiper-slide" >1111</div>
+                    <div className="swiper-slide" >2222</div>
+                    <div className="swiper-slide" >3333</div>
+        </Kswiper>
       </div>
     )
   }
