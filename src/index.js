@@ -10,8 +10,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 
-import App from './03-hooks/03-useEffect';
-
+//import App from './03-hooks/05-useEffect-案例';
+import App from './02-advenced/19-生命周期-销毁';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

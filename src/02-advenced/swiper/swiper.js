@@ -7,10 +7,11 @@ Swiper.use([Navigation,Pagination])
 export default class Kswiper extends Component {
     componentDidMount() {
         new Swiper(".swiper",{
-          pagination: {
+          // 如果需要分页器
+        pagination: {
             el: '.swiper-pagination',
-          }
-        })
+        }
+          })
     }
 
   render() {

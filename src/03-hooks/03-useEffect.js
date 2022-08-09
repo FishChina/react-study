@@ -1,6 +1,6 @@
 //fish 220801
 import React from 'react'
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import axios from 'axios'
 export default function App() {
 
@@ -16,7 +16,7 @@ export default function App() {
             }
         )
 
-    }, [])
+    }, [])//返回空数组
     
 
   return (

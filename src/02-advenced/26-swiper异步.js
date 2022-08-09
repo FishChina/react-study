@@ -10,6 +10,7 @@ export default class App extends Component {
         list:[]
     }
 
+    //一般用在进入页面后，数据初始化
     componentDidMount() {
 
         setTimeout(()=>{
