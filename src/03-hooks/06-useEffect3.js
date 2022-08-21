@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect} from 'react'
 
 export default class App extends Component {
     state = {
@@ -12,6 +12,7 @@ export default class App extends Component {
                         isCreated:!this.state.isCreated
                     })
                 }}>click</button>
+                {/* 如果是true显示child */}
                 {/* {this.state.isCreated?<Child/>:""} */}
                 {this.state.isCreated && <Child/>}
             </div>
@@ -19,31 +20,55 @@ export default class App extends Component {
     }
 }
 
-class Child extends Component{
-    
+function Child () {
 
-    render(){
-        return <div>
-            child
-        </div>
-    }
+     useEffect(() => {
 
-    componentDidMount() {
         window.onresize = ()=>{
             console.log("resize")
         }
 
-        this.timer = setInterval(()=>{
+        var timer = setInterval(()=>{
             console.log("111")
         },1000)
-    }
+
+        return () => {
+            console.log('组件销毁')
+
+            window.onresize = null
+            clearInterval(timer)
+        }
+
+     }, [])
+
+}
+
+// class Child extends Component{
     
 
-    componentWillUnmount(){
-        console.log("componentWillUnmount")
+//     //render 
+//     render(){
+//         return <div>
+//             child
+//         </div>
+//     }
 
-        window.onresize = null
+//     componentDidMount() {
+//         window.onresize = ()=>{
+//             console.log("resize")
+//         }
 
-        clearInterval(this.timer) 
-    }
-}
+//         this.timer = setInterval(()=>{
+//             console.log("111")
+//         },1000)
+//     }
+    
+
+//     componentWillUnmount(){
+//         console.log("componentWillUnmount")
+
+//         window.onresize = null
+
+//         clearInterval(this.timer) 
+//     }
+// }
