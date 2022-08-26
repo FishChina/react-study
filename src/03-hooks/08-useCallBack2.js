@@ -48,7 +48,9 @@ export default function App() {
     <div>
         {/* value是input的默认值 */}
         {name} - <button onClick={
-          setName('xiaoming')
+          ()=>{
+            setName('xiaoming')
+          }
         }>change name</button>
         <input onChange={handleChange} value={text}/>
         <button onClick={handleAdd}>add</button>
