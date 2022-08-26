@@ -4,7 +4,7 @@ import React, { Component, useState, useEffect,useContext} from 'react'
 import axios from 'axios'
 import './css/03-communication.css'
 
-//原本组件传递需要一层一层props传递，传递太过繁琐
+//原本组件传递需要一层一层props传递，传递太过繁琐  跨级通信
 const GlobalContext = React.createContext() //创建context对象
 
 export default function App (){
@@ -51,7 +51,6 @@ function FilmList (props) {
     let {name, poster, grade, synopsis} = props
     const value = useContext(GlobalContext)
 
-
         return(
         <div className="filmitem" onClick={()=>{
             value.changeInfo(synopsis)
@@ -61,18 +60,12 @@ function FilmList (props) {
             <div>观众评分:{grade}</div>
             </div>
         )
-                
-            
-    
-    
-        
-
-
 }
 
 //电影详情 value值就是传递的Context对象
 function FilmDetail () {
     const value = useContext(GlobalContext)
+
     return (
             
                 <div className='filmdetail'>
