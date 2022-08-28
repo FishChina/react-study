@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 
-import App from './03-hooks/13-useReducer1';
+import App from './03-hooks/15-useReducer3';
 // import App from './02-advenced/19-生命周期-销毁';
 
 const container = document.getElementById('root');
