@@ -1,25 +1,14 @@
 import React, { Component } from "react"
-//BrowserRouter as Router,
-import {
-  HashRouter,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
+import Films from "./views/films"
+import Cinemas from  "./views/cinemas"
+import Center from "./views/center";
+import MRouter from "./router/IndexRouter"
 export default class App extends Component {
     render() {
         return (
-            <HashRouter>
-                <Switch>
-                    <Route path="/films" component={Films}/>
-                    <Route path="/cinemas" component={Cinemas}/>
-                    <Route path="/center" component={Center}/>
-                    <Redirect from="/" to="/films" />
-                    {/* <Redirect from="/" to="/films" exact/>
-                        <Route path="*" component={NotFound}/> */}
-                </Switch>
-            </HashRouter>
+
+            //others
+            <MRouter></MRouter>
         )
 
         

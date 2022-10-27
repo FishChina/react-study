@@ -30,6 +30,7 @@ function useCinemaList () {
 }
 
 function useFilter (cinemaList,mytext) {
+
       const getCinemaList = useMemo(() => cinemaList.filter(item=>
         item.name.toUpperCase().includes(mytext.toUpperCase()) ||
         item.address.toUpperCase().includes(mytext.toUpperCase())
